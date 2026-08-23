@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan - Romeo & Juliet</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f6f0;
+      color: #333;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 30px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 2.2rem;
+      color: #8b5a2b;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: 'Georgia', serif;
+      font-size: 1.5rem;
+      color: #8b5a2b;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #f0e6d2;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    p {
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+    .couple-names {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #5c3a21;
+      margin: 20px 0;
+    }
+    .event-card {
+      background: #faf4eb;
+      border: 1px solid #e8d8c3;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+    .bank-card {
+      background: #ffffff;
+      border: 1px dashed #8b5a2b;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #8b5a2b;
+      color: #fff;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: none;
+      margin-top: 5px;
+    }
+    .btn:hover {
+      background: #6e4520;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.8rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <p>Tanpa mengurangi rasa hormat, kami mengundang Anda untuk menghadiri pernikahan kami:</p>
+    
+    <div class="couple-names">
+      Romeo & Juliet
+    </div>
+
+    <p>Yang akan dilaksanakan pada:</p>
+
+    <!-- Detail Acara -->
+    <div class="event-card">
+      <h2>Akad Nikah & Resepsi</h2>
+      <p><strong>Tanggal:</strong> Sabtu, 12 Desember 2026</p>
+      <p><strong>Waktu:</strong> 09.00 WIB - Selesai</p>
+      <p><strong>Lokasi:</strong> Gedung Serbaguna Indah, Jakarta</p>
+      <a href="https://maps.google.com" target="_blank" class="btn">Buka Petunjuk Lokasi (Google Maps)</a>
+    </div>
+
+    <!-- Amplop Digital / Nomor Rekening -->
+    <h2>Amplop Digital</h2>
+    <p>Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Bagi Anda yang ingin memberikan tanda kasih, dapat mengirimkannya melalui:</p>
+
+    <div class="bank-card">
+      <p><strong>Bank BCA</strong></p>
+      <p>Nomor Rekening: <span id="norek1">1234567890</span></p>
+      <p>a.n. Romeo</p>
+      <button class="btn" onclick="copyText('norek1')">Salin Nomor Rekening</button>
+    </div>
+
+    <div class="bank-card">
+      <p><strong>Bank Mandiri</strong></p>
+      <p>Nomor Rekening: <span id="norek2">0987654321</span></p>
+      <p>a.n. Juliet</p>
+      <button class="btn" onclick="copyText('norek2')">Salin Nomor Rekening</button>
+    </div>
+
+    <footer>
+      <p>Terima kasih atas doa dan kehadiran Anda.</p>
+      <p>Kami yang berbahagia,<br><strong>Romeo & Juliet</strong></p>
+    </footer>
+  </div>
+
+  <script>
+    function copyText(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Nomor rekening berhasil disalin: " + text);
+      }).catch(err => {
+        alert("Gagal menyalin nomor rekening");
+      });
+    }
+  </script>
+
+</body>
+</html>
